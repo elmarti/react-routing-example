@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from "../hooks/use-auth";
 
 export const Login = () => {
@@ -14,6 +14,11 @@ export const Login = () => {
     }, []);
     
     return <>
+    <div className="links">
+    <Link to="/about">About</Link>
+    <Link to="/param-example/param1/second/param2/param3">Param Example</Link>
+    <a href="/about">Native about</a>
+    </div>
         {auth.loading ? <h2>Logging in</h2> : <form onSubmit={handleLogin}>
             <label for="username" >Username</label>
             <input type="text" id="username" />
